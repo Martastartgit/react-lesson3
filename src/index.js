@@ -3,10 +3,17 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import {UsersProvider} from "./Context/UserContext";
+import {PostProvider} from "./Context/PostContext";
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+      <UsersProvider>
+          <PostProvider>
+              <App />
+          </PostProvider>
+      </UsersProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
